@@ -15,6 +15,9 @@
     "autoload-dev": {
         "Majksa\\Messenger\\Tests\\": "tests/"
     },
+    "require": {
+        "facebook/graph-sdk": "^5.7"
+    },
     "require-dev": {
         "codeception/codeception": "^4.1",
         "codeception/module-phpbrowser": "^1.0.0",
