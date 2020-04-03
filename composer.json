@@ -1,0 +1,23 @@
+{
+    "name": "majksa/messenger",
+    "description": "Downloads and sends facebook messages.",
+    "minimum-stability": "stable",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Ondřej Maxa",
+            "email": "info@majksa.cz"
+        }
+    ],
+    "autoload": {
+        "Majksa\\Messenger\\": "src/"
+    },
+    "autoload-dev": {
+        "Majksa\\Messenger\\Tests\\": "tests/"
+    },
+    "require-dev": {
+        "codeception/codeception": "^4.1",
+        "codeception/module-phpbrowser": "^1.0.0",
+        "codeception/module-asserts": "^1.0.0"
+    }
+}
