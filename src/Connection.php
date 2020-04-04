@@ -49,13 +49,24 @@ class Connection
     }
 
     /**
-     * @param string $endpoint
+     * @param array $fields
      * @param string $token
      * @return FacebookResponse
      * @throws \Facebook\Exceptions\FacebookSDKException
      */
-    public function execute(string $endpoint, string $token): FacebookResponse
+    public function execute(array $fields, string $token): FacebookResponse
     {
+        $endpoint = $this->generateEndpoint($fields);
+        echo $endpoint;
         return $this->facebook->get($endpoint, $token);
+    }
+
+    private function generateEndpoint(string $id, array $fields)
+    {
+        $endpoint = '/'.$id.'?fields=';
+        $json = json_encode($fields, JSON_THROW_ON_ERROR, 512);
+        $trimmed = substr($json, 1, -1);
+        $fieldsStr = str_replace(array('[', ']', ':', '"'), array('{', '}', '', ''), $trimmed);
+        return $endpoint . $fieldsStr;
     }
 }
