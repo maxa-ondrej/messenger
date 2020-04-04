@@ -46,11 +46,6 @@ class ConnectionTest extends Unit
         $this->connection = new Connection(self::APP_ID, self::APP_SECRET);
     }
 
-    protected function _after()
-    {
-
-    }
-
     public function testExecution()
     {
         $response = $this->connection->execute(Connection::ME, self::TOKEN);

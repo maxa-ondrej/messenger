@@ -46,10 +46,6 @@ class UserTest extends Unit
         $this->user = new User($connection, self::TOKEN);
     }
 
-    protected function _after()
-    {
-    }
-
     // tests
     public function testCreation()
     {
