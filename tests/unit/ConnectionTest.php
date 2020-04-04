@@ -53,7 +53,7 @@ class ConnectionTest extends Unit
 
     public function testExecution()
     {
-        $response = $this->connection->execute('/me', self::TOKEN);
+        $response = $this->connection->execute(Connection::ME, self::TOKEN);
         $this->assertEquals(self::USER_ID, $response->getGraphUser()->getId());
     }
 }

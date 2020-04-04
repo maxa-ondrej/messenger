@@ -55,7 +55,7 @@ class Connection
      * @return FacebookResponse
      * @throws \Facebook\Exceptions\FacebookSDKException
      */
-    public function execute(string $id, array $fields, string $token): FacebookResponse
+    public function execute(string $id, string $token, array $fields = []): FacebookResponse
     {
         $endpoint = $this->generateEndpoint($id, $fields);
         return $this->facebook->get($endpoint, $token);

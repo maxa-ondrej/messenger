@@ -22,7 +22,7 @@ class Page extends Node
      */
     private function downloadConversations()
     {
-        $response = $this->connection->execute(Connection::ME, ['conversations'=>['messages'=>['message']]], $this->token);
+        $response = $this->connection->execute(Connection::ME, $this->token, ['conversations'=>['messages'=>['message']]]);
         return $response->getGraphNode()->getField('conversations')->asArray();
     }
 
