@@ -13,7 +13,7 @@ class Page extends Node
      */
     public function getConversations(): array
     {
-        $conversationsArray = $this->downloadConversations();
+        $conversationsRaw = $this->downloadConversations();
 
     }
 
@@ -24,5 +24,17 @@ class Page extends Node
     {
         $response = $this->connection->execute(Connection::ME, ['conversations'=>['messages'=>['message']]], $this->token);
         return $response->getGraphNode()->getField('conversations')->asArray();
+    }
+
+    /**
+     * @param array $conversationsRaw
+     */
+    private function parseConversations(array $conversationsRaw): array
+    {
+        $conversations = [];
+        foreach ($conversationsRaw as $conversation) {
+            $conversations[] = new Conversation($conversation);
+        }
+        return $conversations;
     }
 }

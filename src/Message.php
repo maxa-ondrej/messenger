@@ -19,16 +19,16 @@
 namespace Majksa\Messenger;
 
 
-class Conversation
+class Message
 {
     /**
      * @var string
      */
     private $id;
     /**
-     * @var array
+     * @var string
      */
-    private $messages = [];
+    private $text;
 
     /**
      * Conversation constructor.
@@ -38,7 +38,7 @@ class Conversation
     public function __construct(array $data)
     {
         $this->id = $data['id'];
-        $this->messages = $this->parseMessages($data['messages']);
+        $this->text = $data['message'];
     }
 
     /**
@@ -50,19 +50,10 @@ class Conversation
     }
 
     /**
-     * @return array
+     * @return string
      */
-    public function getMessages(): array
+    public function getText(): string
     {
-        return $this->messages;
-    }
-
-    private function parseMessages(array $data)
-    {
-        $messages = [];
-        foreach ($data as $message) {
-            $messages[] = new Message($message);
-        }
-        return $messages;
+        return $this->text;
     }
 }
