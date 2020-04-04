@@ -20,6 +20,7 @@ namespace Majksa\Messenger\Tests\Unit;
 
 use Codeception\Test\Unit;
 use Majksa\Messenger\Connection;
+use Majksa\Messenger\Page;
 use Majksa\Messenger\User;
 
 /**
@@ -34,6 +35,9 @@ class UserTest extends Unit
 
     private const TOKEN = 'EAAjCvpU8GqQBAKLUsonZA1U4gQZAZALNUDuPslbIqS9UXBV2h9cwKjs6lpc6YRZAHYB3rAZB6mpMT32RQA4gvo0TUKULUI17yeHd6eGObeQGbgiTHPdU3GxxZAjLMvwp0JBUFUZBOu5SUiiCOTLpANB2ZBvBB08q2MDl7BE2PrDlKgZDZD';
 
+    /**
+     * @var User
+     */
     private $user;
     
     protected function _before()
@@ -50,5 +54,11 @@ class UserTest extends Unit
     public function testCreation()
     {
         $this->assertInstanceOf(User::class, $this->user);
+    }
+
+    public function testGetPage()
+    {
+        $page = $this->user->getPage('devsvetruzi');
+        $this->assertInstanceOf(Page::class, $page);
     }
 }

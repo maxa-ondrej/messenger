@@ -23,25 +23,11 @@ namespace Majksa\Messenger;
  * Class User
  * @package Majksa\Messenger
  */
-class User
+class User extends Node
 {
-    /**
-     * @var Connection
-     */
-    private $connection;
-    /**
-     * @var string
-     */
-    private $token;
-
-    /**
-     * User constructor.
-     * @param $connection
-     * @param $token
-     */
-    public function __construct(Connection $connection, string $token)
+    public function getPage(string $id)
     {
-        $this->connection = $connection;
-        $this->token = $token;
+        $response = $this->connection->execute($id, ['access_token'], $this->token);
+        return new Page($this->connection, $response->getAccessToken());
     }
 }
