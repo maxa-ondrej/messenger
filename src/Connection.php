@@ -39,7 +39,7 @@ class Connection
      * @param string $id
      * @param string $secret
      */
-    public function __construct(string $id, string$secret)
+    public function __construct(string $id, string $secret)
     {
         $this->facebook = new Facebook([
             'app_id' => $id,
