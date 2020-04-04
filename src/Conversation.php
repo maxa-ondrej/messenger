@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2020  Majksa
+ * Copyright (C) 2020  Ondřej Maxa
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-namespace Majksa\Messenger;
+namespace Maxa\Ondrej\Messenger;
 
 
 class Conversation

@@ -11,12 +11,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Majksa\\Messenger\\": "src/"
+            "Maxa\\Ondrej\\Messenger\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Majksa\\Messenger\\": "tests/unit/"
+            "Maxa\\Ondrej\\Messenger\\": "tests/unit/"
         }
     },
     "require": {
