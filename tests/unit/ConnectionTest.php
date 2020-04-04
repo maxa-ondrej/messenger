@@ -23,4 +23,9 @@ class ConnectionTest extends Unit
     protected function _after()
     {
     }
+
+    public function getConnection()
+    {
+        return $this->connection;
+    }
 }
