@@ -20,10 +20,10 @@ namespace Majksa\Messenger;
 
 
 /**
- * Class UserAbstract
+ * Class Node
  * @package Majksa\Messenger
  */
-abstract class UserAbstract
+abstract class Node
 {
     /**
      * @var Connection
@@ -35,7 +35,7 @@ abstract class UserAbstract
     protected $token;
 
     /**
-     * UserAbstract constructor.
+     * Node constructor.
      * @param $connection
      * @param $token
      */
