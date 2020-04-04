@@ -12,9 +12,6 @@
     "autoload": {
         "Majksa\\Messenger\\": "src/"
     },
-    "autoload-dev": {
-        "Majksa\\Messenger\\Tests\\": "tests/"
-    },
     "require-dev": {
         "codeception/codeception": "^4.1",
         "codeception/module-phpbrowser": "^1.0.0",
