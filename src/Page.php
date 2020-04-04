@@ -1,7 +1,6 @@
 <?php
 
-
-namespace Majksa\Messenger;
+namespace Maxa\Ondrej\Messenger;
 
 
 use Facebook\Exceptions\FacebookSDKException;
