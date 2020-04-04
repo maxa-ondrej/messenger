@@ -51,4 +51,27 @@ class ConnectionTest extends Unit
         $response = $this->connection->execute(Connection::ME, self::TOKEN);
         $this->assertEquals(self::USER_ID, $response->getGraphUser()->getId());
     }
+
+    /**
+     * @dataProvider endpointProvider
+     * @param $id
+     * @param $fields
+     * @param $expected
+     */
+    public function testGenerateEndpoint($id, $fields, $expected)
+    {
+        $endpoint = Connection::generateEndpoint($id, $fields);
+        $this->assertEquals($expected, $endpoint);
+    }
+
+    /**
+     * @return array
+     */
+    public function endpointProvider(): array
+    {
+        return [
+            ['id' => 'me', 'fields' => [], 'expected' => '/me'],
+            ['id' => 'devsvetruzi', 'fields' => [], 'expected' => '/devsvetruzi']
+        ];
+    }
 }

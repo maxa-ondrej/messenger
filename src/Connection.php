@@ -59,13 +59,19 @@ class Connection
      */
     public function execute(string $id, string $token, array $fields = []): FacebookResponse
     {
-        $endpoint = $this->generateEndpoint($id, $fields);
+        $endpoint = self::generateEndpoint($id, $fields);
         return $this->facebook->get($endpoint, $token);
     }
 
-    private function generateEndpoint(string $id, array $fields)
+    // TODO: generating endpoint from array that is indexed and associative
+    /**
+     * @param string $id
+     * @param array $fields
+     * @return string
+     */
+    static function generateEndpoint(string $id, array $fields): string
     {
-        $endpoint = '/'.$id.'?fields=';
+        $endpoint = '/'.$id.(empty($fields)?'':'?fields=');
         $json = json_encode($fields, JSON_THROW_ON_ERROR, 512);
         $trimmed = substr($json, 1, -1);
         $fieldsStr = str_replace(array('[', ']', ':', '"'), array('{', '}', '', ''), $trimmed);
