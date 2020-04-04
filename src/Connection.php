@@ -57,7 +57,6 @@ class Connection
     public function execute(string $id, array $fields, string $token): FacebookResponse
     {
         $endpoint = $this->generateEndpoint($id, $fields);
-        echo $endpoint;
         return $this->facebook->get($endpoint, $token);
     }
 
