@@ -19,22 +19,29 @@
 namespace Majksa\Messenger;
 
 
-use Facebook\Exceptions\FacebookSDKException;
-
 /**
- * Class User
+ * Class Node
  * @package Majksa\Messenger
  */
-class User extends Node
+abstract class Node
 {
     /**
-     * @param string $id
-     * @return Page
-     * @throws FacebookSDKException
+     * @var Connection
      */
-    public function getPage(string $id): Page
+    protected $connection;
+    /**
+     * @var string
+     */
+    protected $token;
+
+    /**
+     * Node constructor.
+     * @param $connection
+     * @param $token
+     */
+    public function __construct(Connection $connection, string $token)
     {
-        $response = $this->connection->execute($id, ['access_token'], $this->token);
-        return new Page($this->connection, $response->getAccessToken());
+        $this->connection = $connection;
+        $this->token = $token;
     }
 }
