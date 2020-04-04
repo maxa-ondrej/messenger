@@ -19,6 +19,10 @@
 namespace Maxa\Ondrej\Messenger;
 
 
+/**
+ * Class Conversation
+ * @package Maxa\Ondrej\Messenger
+ */
 class Conversation
 {
     /**
@@ -57,6 +61,10 @@ class Conversation
         return $this->messages;
     }
 
+    /**
+     * @param array $data
+     * @return array
+     */
     private function parseMessages(array $data)
     {
         $messages = [];

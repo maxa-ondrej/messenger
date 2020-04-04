@@ -19,6 +19,10 @@
 namespace Maxa\Ondrej\Messenger;
 
 
+/**
+ * Class Message
+ * @package Maxa\Ondrej\Messenger
+ */
 class Message
 {
     /**

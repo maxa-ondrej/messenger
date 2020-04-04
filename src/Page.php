@@ -25,6 +25,7 @@ class Page extends Node
 {
     /**
      * @throws FacebookSDKException
+     * @return array
      */
     public function getConversations(): array
     {
@@ -34,6 +35,7 @@ class Page extends Node
 
     /**
      * @throws FacebookSDKException
+     * @return array
      */
     function downloadConversations(): array
     {
@@ -43,6 +45,7 @@ class Page extends Node
 
     /**
      * @param array $conversationsRaw
+     * @return array
      */
     private function parseConversations(array $conversationsRaw): array
     {
