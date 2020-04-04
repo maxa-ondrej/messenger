@@ -18,29 +18,31 @@
 
 namespace Maxa\Ondrej\Messenger;
 
+
 use Codeception\Test\Unit;
 
-class PageTest extends Unit
+class MessageTest extends Unit
 {
     /**
-     * @var Page
+     * @param $data
+     * @throws \Exception
+     * @dataProvider messageProvider
      */
-    protected $page;
-
-    private const TOKEN = 'EAAjCvpU8GqQBAAZA6hxmGsXhKGzuc5tZBTKFmoZAGTAaDm4savTjKZBUDDWMbxLhEdMZA8yKgmA6qfDEZBXkhgZBLbO8xqAxTWQeDpxwG1ERAhBXs6ngbdvtZA4nP9wmb8IlZAffxXzc6uht1u1usaabtqVmccwCcct2h9XZAZAsp1EObJgTGw0xRZCE';
-    private const MESSAGE_TEXT = 'Ahoj';
-
-    protected function _before()
+    public function test__construct($data)
     {
-        $connection = new Connection(ConnectionTest::APP_ID, ConnectionTest::APP_SECRET);
-        $this->page = new Page($connection, self::TOKEN);
+        $message = $this->construct(Message::class, [$data]);
+        $this->assertEquals($data['id'], $message->getId());
+        $this->assertEquals($data['message'], $message->getText());
     }
 
-    public function testGetPageConversations()
+
+    public function messageProvider()
     {
-        $conversations = $this->page->getConversations();
-        $messages = $conversations[0]->getMessages();
-        $message = end($messages);
-        $this->assertEquals(self::MESSAGE_TEXT, $message->getText());
+        return [
+            [['message' => 'Ahoj', 'id' => 'm_1']],
+            [['message' => 'Jak se máš?', 'id' => 'm_2']],
+            [['message' => 'Hi', 'id' => 'm_3']],
+            [['message' => 'How r u?', 'id' => 'm_4']]
+        ];
     }
 }
