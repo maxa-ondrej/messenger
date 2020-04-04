@@ -16,11 +16,15 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-namespace Maxa\Ondrej\Messenger;
+namespace Maxa\Ondrej\Messenger\Node;
 
 
 use Facebook\Exceptions\FacebookSDKException;
 
+/**
+ * Class Page
+ * @package Maxa\Ondrej\Messenger\Node
+ */
 class Page extends Node
 {
     /**

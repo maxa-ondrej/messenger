@@ -24,7 +24,7 @@ use Facebook\FacebookResponse;
 
 /**
  * Class Connection
- * @package Majksa\Messenger
+ * @package Maxa\Ondrej\Messenger
  */
 class Connection
 {

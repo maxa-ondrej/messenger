@@ -16,32 +16,25 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-namespace Maxa\Ondrej\Messenger;
+namespace Maxa\Ondrej\Messenger\Node;
 
+
+use Facebook\Exceptions\FacebookSDKException;
 
 /**
- * Class Node
- * @package Majksa\Messenger
+ * Class User
+ * @package Maxa\Ondrej\Messenger\Node
  */
-abstract class Node
+class User extends Node
 {
     /**
-     * @var Connection
+     * @param string $id
+     * @return Page
+     * @throws FacebookSDKException
      */
-    protected $connection;
-    /**
-     * @var string
-     */
-    protected $token;
-
-    /**
-     * Node constructor.
-     * @param $connection
-     * @param $token
-     */
-    public function __construct(Connection $connection, string $token)
+    public function getPage(string $id): Page
     {
-        $this->connection = $connection;
-        $this->token = $token;
+        $response = $this->connection->execute($id, $this->token, ['access_token']);
+        return new Page($this->connection, $response->getGraphNode()->getField('access_token'));
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2020  Majksa
+ * Copyright (C) 2020  Ondřej Maxa
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,25 +16,32 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-namespace Majksa\Messenger;
+namespace Maxa\Ondrej\Messenger\Node;
 
-
-use Facebook\Exceptions\FacebookSDKException;
 
 /**
- * Class User
- * @package Majksa\Messenger
+ * Class Node
+ * @package Maxa\Ondrej\Messenger\Node
  */
-class User extends Node
+abstract class Node
 {
     /**
-     * @param string $id
-     * @return Page
-     * @throws FacebookSDKException
+     * @var Connection
      */
-    public function getPage(string $id): Page
+    protected $connection;
+    /**
+     * @var string
+     */
+    protected $token;
+
+    /**
+     * Node constructor.
+     * @param $connection
+     * @param $token
+     */
+    public function __construct(Connection $connection, string $token)
     {
-        $response = $this->connection->execute($id, $this->token, ['access_token']);
-        return new Page($this->connection, $response->getGraphNode()->getField('access_token'));
+        $this->connection = $connection;
+        $this->token = $token;
     }
 }
