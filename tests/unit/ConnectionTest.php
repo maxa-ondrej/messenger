@@ -16,10 +16,9 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-namespace Majksa\Messenger\Tests\Unit;
+namespace Majksa\Messenger;
 
 use Codeception\Test\Unit;
-use Majksa\Messenger\Connection;
 
 /**
  * Class ConnectionTest
