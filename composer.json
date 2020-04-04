@@ -11,15 +11,20 @@
     ],
     "autoload": {
         "psr-4": {
-            "Majksa\\Messenger\\": "src/"
+            "Maxa\\Ondrej\\Messenger\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Majksa\\Messenger\\Tests\\": "tests/"
+            "Maxa\\Ondrej\\Messenger\\": "tests/unit/"
         }
     },
+    "require": {
+        "facebook/graph-sdk": "^5.7",
+        "ext-json": "*"
+    },
     "require-dev": {
+        "roave/security-advisories": "dev-master",
         "codeception/codeception": "4.0.*",
         "codeception/module-phpbrowser": "^1.0.0",
         "codeception/module-asserts": "^1.0.0"
