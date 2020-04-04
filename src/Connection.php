@@ -33,6 +33,7 @@ class Connection
     public $facebook;
 
     public const GRAPH_VERSION = 'v2.10';
+    public const ME = 'me';
 
     /**
      * Application constructor.
