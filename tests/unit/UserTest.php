@@ -1,6 +1,6 @@
 <?php
 
-require 'ConnectionTest.php';
+namespace Majksa\Messenger\Tests\Unit;
 
 use Codeception\Test\Unit;
 use Majksa\Messenger\Connection;

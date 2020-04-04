@@ -16,7 +16,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Majksa\\Messenger\\Tests\\": "tests/"
+            "Majksa\\Messenger\\Tests\\Unit\\": "tests/unit/"
         }
     },
     "require": {
