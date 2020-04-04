@@ -35,7 +35,7 @@ class Page extends Node
     /**
      * @throws FacebookSDKException
      */
-    private function downloadConversations()
+    function downloadConversations()
     {
         $response = $this->connection->execute(Connection::ME, $this->token, ['conversations'=>['messages'=>['message']]]);
         return $response->getGraphNode()->getField('conversations')->asArray();
