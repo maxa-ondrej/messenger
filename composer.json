@@ -20,7 +20,8 @@
         }
     },
     "require": {
-        "facebook/graph-sdk": "^5.7"
+        "facebook/graph-sdk": "^5.7",
+        "ext-json": "*"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master",
