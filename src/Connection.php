@@ -18,6 +18,7 @@
 
 namespace Majksa\Messenger;
 
+use Facebook\Exceptions\FacebookSDKException;
 use Facebook\Facebook;
 use Facebook\FacebookResponse;
 
@@ -39,6 +40,7 @@ class Connection
      * Application constructor.
      * @param string $id
      * @param string $secret
+     * @throws FacebookSDKException
      */
     public function __construct(string $id, string $secret)
     {
@@ -53,9 +55,9 @@ class Connection
      * @param array $fields
      * @param string $token
      * @return FacebookResponse
-     * @throws \Facebook\Exceptions\FacebookSDKException
+     * @throws FacebookSDKException
      */
-    public function execute(string $id, array $fields, string $token): FacebookResponse
+    public function execute(string $id, string $token, array $fields = []): FacebookResponse
     {
         $endpoint = $this->generateEndpoint($id, $fields);
         return $this->facebook->get($endpoint, $token);
