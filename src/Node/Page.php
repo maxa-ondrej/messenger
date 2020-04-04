@@ -20,6 +20,8 @@ namespace Maxa\Ondrej\Messenger\Node;
 
 
 use Facebook\Exceptions\FacebookSDKException;
+use Maxa\Ondrej\Messenger\Connection;
+use Maxa\Ondrej\Messenger\Conversation;
 
 /**
  * Class Page

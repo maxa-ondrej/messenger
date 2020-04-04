@@ -19,6 +19,8 @@
 namespace Maxa\Ondrej\Messenger\Node;
 
 
+use Maxa\Ondrej\Messenger\Connection;
+
 /**
  * Class Node
  * @package Maxa\Ondrej\Messenger\Node
