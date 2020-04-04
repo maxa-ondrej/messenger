@@ -35,6 +35,6 @@ class User extends Node
     public function getPage(string $id): Page
     {
         $response = $this->connection->execute($id, $this->token, ['access_token']);
-        return new Page($this->connection, $response->getAccessToken());
+        return new Page($this->connection, $response->getGraphNode()->getField('access_token'));
     }
 }

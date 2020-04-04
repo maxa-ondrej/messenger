@@ -18,10 +18,11 @@
 
 namespace Majksa\Messenger\Tests\Unit;
 
+use Codeception\Test\Unit;
 use Majksa\Messenger\Connection;
 use Majksa\Messenger\Page;
 
-class PageTest extends \Codeception\Test\Unit
+class PageTest extends Unit
 {
     /**
      * @var Page
@@ -37,7 +38,7 @@ class PageTest extends \Codeception\Test\Unit
         $this->page = new Page($connection, self::TOKEN);
     }
 
-    public function testGetConversations()
+    public function testGetPageConversations()
     {
         $conversations = $this->page->getConversations();
         $messages = $conversations[0]->getMessages();
