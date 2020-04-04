@@ -10,10 +10,14 @@
         }
     ],
     "autoload": {
-        "Majksa\\Messenger\\": "src/"
+        "psr-4": {
+            "Majksa\\Messenger\\": "src/"
+        }
     },
     "autoload-dev": {
-        "Majksa\\Messenger\\Tests\\": "tests/"
+        "psr-4": {
+            "Majksa\\Messenger\\Tests\\": "tests/"
+        }
     },
     "require-dev": {
         "codeception/codeception": "4.0.*",
