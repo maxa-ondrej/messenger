@@ -14,7 +14,8 @@ class Page extends Node
     public function getConversations(): array
     {
         $conversationsRaw = $this->downloadConversations();
-
+        $conversations = $this->parseConversations($conversationsRaw);
+        return $conversations;
     }
 
     /**
