@@ -19,6 +19,7 @@
 namespace Majksa\Messenger;
 
 use Facebook\Facebook;
+use Facebook\FacebookResponse;
 
 /**
  * Class Connection
@@ -45,5 +46,16 @@ class Connection
             'app_secret' => $secret,
             'default_graph_version' => self::GRAPH_VERSION
         ]);
+    }
+
+    /**
+     * @param string $endpoint
+     * @param string $token
+     * @return FacebookResponse
+     * @throws \Facebook\Exceptions\FacebookSDKException
+     */
+    public function execute(string $endpoint, string $token): FacebookResponse
+    {
+        return $this->facebook->get($endpoint, $token);
     }
 }
